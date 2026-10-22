@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Location Selector</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Sketch 2 Header: Cineplex | log in + Sign up -->
+  <header>
+    <div class="logo-container">
+      <a href="index.html" class="logo">Cineplex</a>
+    </div>
+    <div class="auth-buttons">
+      <button class="btn btn-outline" onclick="showLoginModal()">log in</button>
+      <button class="btn btn-primary" onclick="showSignupModal()">Sign up</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="location-container" id="location-container">
+      <h1 class="page-title">Location Selector</h1>
+      <h2 style="font-size: 1.3rem; margin-top: 1rem; color: #4a5568;">Find your local Cineplex</h2>
+      
+      <div class="location-select-box">
+        <select id="theatre-select" class="select-input">
+          <option value="">-- Choose a Cineplex Location --</option>
+          <option value="t1">Cineplex Odeon Yonge-Eglinton (2300 Yonge St, Toronto, ON)</option>
+          <option value="t2">Scotiabank Theatre Toronto (259 Richmond St W, Toronto, ON)</option>
+          <option value="t3">Cineplex Cinemas Yonge-Dundas (10 Dundas St E, Toronto, ON)</option>
+          <option value="t4">Cineplex VIP Cinemas Don Mills (12 Barber Greene Rd, North York, ON)</option>
+        </select>
+      </div>
+
+      <div id="theatre-list" class="location-list">
+        <!-- Static location list links to movie-selection.html -->
+        <a href="movie-selection.html" class="location-item" style="text-decoration: none; color: inherit;" onclick="localStorage.setItem('selectedTheatre', 't1')">
+          <div>
+            <strong>Cineplex Odeon Yonge-Eglinton</strong>
+            <p style="font-size: 0.85rem; color: #718096;">2300 Yonge St, Toronto, ON</p>
+          </div>
+          <span class="btn btn-outline">Select</span>
+        </a>
+
+        <a href="movie-selection.html" class="location-item" style="text-decoration: none; color: inherit;" onclick="localStorage.setItem('selectedTheatre', 't2')">
+          <div>
+            <strong>Scotiabank Theatre Toronto</strong>
+            <p style="font-size: 0.85rem; color: #718096;">259 Richmond St W, Toronto, ON</p>
+          </div>
+          <span class="btn btn-outline">Select</span>
+        </a>
+
+        <a href="movie-selection.html" class="location-item" style="text-decoration: none; color: inherit;" onclick="localStorage.setItem('selectedTheatre', 't3')">
+          <div>
+            <strong>Cineplex Cinemas Yonge-Dundas</strong>
+            <p style="font-size: 0.85rem; color: #718096;">10 Dundas St E, Toronto, ON</p>
+          </div>
+          <span class="btn btn-outline">Select</span>
+        </a>
+
+        <a href="movie-selection.html" class="location-item" style="text-decoration: none; color: inherit;" onclick="localStorage.setItem('selectedTheatre', 't4')">
+          <div>
+            <strong>Cineplex VIP Cinemas Don Mills</strong>
+            <p style="font-size: 0.85rem; color: #718096;">12 Barber Greene Rd, North York, ON</p>
+          </div>
+          <span class="btn btn-outline">Select</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-bar">
+    <p>Cineplex Prototype</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

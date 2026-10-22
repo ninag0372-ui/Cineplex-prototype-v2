@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Header matching sketch: Cineplex | log in + Sign up -->
+  <header>
+    <div class="logo-container">
+      <a href="index.html" class="logo">Cineplex</a>
+    </div>
+    <div class="auth-buttons">
+      <button class="btn btn-outline" onclick="showLoginModal()">log in</button>
+      <button class="btn btn-primary" onclick="showSignupModal()">Sign up</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1 class="page-title">Payment</h1>
+      <p class="page-subtitle">Enter your payment information to secure your ticket.</p>
+    </div>
+
+    <!-- Container for Payment & Ticket Confirmation -->
+    <div class="payment-container" id="payment-container">
+      <div class="payment-box">
+
+        <!-- Summary Box -->
+        <div class="order-summary" id="order-summary">
+          <p class="total-amount-label"><strong>Total amount:</strong> <span id="total-amount-display">$14.50</span></p>
+          <p id="seats-summary-display" style="font-size: 0.9rem; color: #718096; margin-top: 0.25rem;">Seats: A1</p>
+        </div>
+
+        <!-- Payment Form -->
+        <form id="payment-form" onsubmit="processPayment(event)" style="margin-top: 1.5rem;">
+          <div class="form-group">
+            <label for="cardholder-name">Card holder name</label>
+            <input type="text" id="cardholder-name" class="text-input" placeholder="e.g. John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="card-number">Card number</label>
+            <input type="text" id="card-number" class="text-input" placeholder="•••• •••• •••• ••••" required>
+          </div>
+
+          <div class="form-group-row" style="display: flex; gap: 1rem;">
+            <div class="form-group" style="flex: 1;">
+              <label for="expiry-date">Expiry date</label>
+              <input type="text" id="expiry-date" class="text-input" placeholder="MM/YY" required>
+            </div>
+            <div class="form-group" style="flex: 1;">
+              <label for="postal-code">Zip/postal code</label>
+              <input type="text" id="postal-code" class="text-input" placeholder="A1A 1A1" required>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem; padding: 0.75rem;">Pay &
+            Secure Ticket</button>
+        </form>
+
+        <div class="divider" style="border-top: 1px solid #e2e8f0; margin: 1.5rem 0;"></div>
+
+        <!-- PayPal Button -->
+        <div class="paypal-section" style="text-align: center;">
+          <button type="button" class="btn btn-outline" style="width: 100%; padding: 0.75rem;"
+            onclick="processPayment(null, 'PayPal')">
+            Pay with PayPal
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Confirmation Box (Initially Hidden) -->
+      <div id="confirmation-screen" class="confirmation-box"
+        style="display: none; text-align: center; padding: 2rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px;">
+        <div style="font-size: 3rem; color: #38a169; margin-bottom: 0.5rem;">✓</div>
+        <h2 style="font-size: 1.5rem; color: #2d3748; margin-bottom: 0.5rem;">Ticket Secured!</h2>
+        <p style="color: #4a5568; margin-bottom: 1.5rem;">Your payment has been processed successfully. Your ticket
+          confirmation code is <strong id="confirmation-code">CPX-89234</strong>.</p>
+
+        <div
+          style="background-color: #f7fafc; border: 1px dashed #cbd5e0; padding: 1rem; border-radius: 6px; text-align: left; max-width: 400px; margin: 0 auto 1.5rem auto;">
+          <p><strong>Movie:</strong> <span id="confirm-movie">Dune: Part Two</span></p>
+          <p><strong>Seats:</strong> <span id="confirm-seats">A1</span></p>
+          <p><strong>Total Paid:</strong> <span id="confirm-amount">$14.50</span></p>
+          <p><strong>Status:</strong> Confirmed & Secured</p>
+        </div>
+
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-bar">
+    <p>Cineplex Prototype</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

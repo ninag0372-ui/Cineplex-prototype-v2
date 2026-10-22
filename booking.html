@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date, Time & Seat Selection</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <a href="index.html" class="logo">Cineplex</a>
+    </div>
+    <div class="auth-buttons">
+      <button class="btn btn-outline" onclick="showLoginModal()">log in</button>
+      <button class="btn btn-primary" onclick="showSignupModal()">Sign up</button>
+    </div>
+  </header>
+
+  <main id="booking-container">
+    <div class="page-header">
+      <h1 class="page-title">Date, time, ticket quantity + seat Selection</h1>
+    </div>
+
+    <div class="booking-layout">
+      <!-- Left Column: Movie Info & Seat Selection -->
+      <div class="booking-left">
+        <div id="booking-movie-details" class="movie-header-details">
+          <div class="small-poster-placeholder">
+            [ Dune: Part Two Poster ]
+          </div>
+          <div class="movie-text-details">
+            <h2>Dune: Part Two</h2>
+            <p><strong>Rating:</strong> PG-13 | <strong>Duration:</strong> 166 min</p>
+            <p><strong>Genre:</strong> Sci-Fi / Adventure</p>
+            <p style="margin-top:0.5rem;">Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.</p>
+            <div class="tag-list">
+              <span class="tag">IMAX</span><span class="tag">AVX</span><span class="tag">70MM</span>
+            </div>
+            <a class="trailer-link" onclick="alert('Trailer popup placeholder for Dune: Part Two')">▶ Watch trailer</a>
+          </div>
+        </div>
+
+        <div class="seat-selection-area">
+          <div class="screen-indicator">\ Screen /</div>
+          <div id="seat-grid" class="seat-grid">
+            <!-- Row A -->
+            <div class="seat" data-seat="A1" onclick="toggleSeat(this, 'false')">A1</div>
+            <div class="seat occupied" data-seat="A2" onclick="toggleSeat(this, 'true')">A2</div>
+            <div class="seat" data-seat="A3" onclick="toggleSeat(this, 'false')">A3</div>
+            <div class="seat selected" data-seat="A4" onclick="toggleSeat(this, 'false')">A4</div>
+            <div class="seat occupied" data-seat="A5" onclick="toggleSeat(this, 'true')">A5</div>
+            <div class="seat" data-seat="A6" onclick="toggleSeat(this, 'false')">A6</div>
+            
+            <!-- Row B -->
+            <div class="seat" data-seat="B1" onclick="toggleSeat(this, 'false')">B1</div>
+            <div class="seat" data-seat="B2" onclick="toggleSeat(this, 'false')">B2</div>
+            <div class="seat" data-seat="B3" onclick="toggleSeat(this, 'false')">B3</div>
+            <div class="seat" data-seat="B4" onclick="toggleSeat(this, 'false')">B4</div>
+            <div class="seat" data-seat="B5" onclick="toggleSeat(this, 'false')">B5</div>
+            <div class="seat" data-seat="B6" onclick="toggleSeat(this, 'false')">B6</div>
+          </div>
+          
+          <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; font-size: 0.8rem; color: #4a5568;">
+            <div style="display: flex; align-items: center; gap: 0.3rem;">
+              <div style="width: 16px; height: 16px; border-radius: 50%; border: 1px solid #a0aec0; background: #fff;"></div> Available
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.3rem;">
+              <div style="width: 16px; height: 16px; border-radius: 50%; border: 1px solid #2b6cb0; background: #3182ce;"></div> Selected
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.3rem;">
+              <div style="width: 16px; height: 16px; border-radius: 50%; border: 1px solid #cbd5e0; background: #cbd5e0;"></div> Taken
+            </div>
+          </div>
+          <p style="font-size: 0.8rem; color: #718096; text-align: center;">Click on available seats to select/unselect.</p>
+        </div>
+      </div>
+
+      <!-- Right Column: Date, Time, Quantity & Account/Guest Checkout -->
+      <div class="booking-right">
+        <div class="form-group">
+          <label for="date-select">Date</label>
+          <select id="date-select" class="select-input">
+            <option value="Today, Oct 8">Today, Oct 8</option>
+            <option value="Tomorrow, Oct 9">Tomorrow, Oct 9</option>
+            <option value="Friday, Oct 10">Friday, Oct 10</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="time-select">Time</label>
+          <select id="time-select" class="select-input">
+            <option value="1:15 PM">1:15 PM</option>
+            <option value="4:30 PM">4:30 PM</option>
+            <option value="7:45 PM">7:45 PM</option>
+            <option value="10:15 PM">10:15 PM</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="quantity-select">Quantity</label>
+          <select id="quantity-select" class="select-input">
+            <option value="1">1 Ticket</option>
+            <option value="2">2 Tickets</option>
+            <option value="3">3 Tickets</option>
+            <option value="4">4 Tickets</option>
+          </select>
+        </div>
+
+        <div class="checkout-section">
+          <h3 class="checkout-title">You're almost there!</h3>
+
+          <!-- Option 1: Log in -->
+          <div class="checkout-box">
+            <h4>Log in</h4>
+            <div class="form-group">
+              <input type="email" placeholder="Email" class="text-input">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="text-input">
+            </div>
+            <button class="btn btn-primary" style="width:100%;" onclick="handleCheckout('Log In')">Next</button>
+          </div>
+
+          <!-- Option 2: Continue as Guest -->
+          <div class="checkout-box">
+            <h4>Continue as Guest</h4>
+            <div class="form-group">
+              <input type="email" placeholder="Email" class="text-input">
+            </div>
+            <button class="btn btn-outline" style="width:100%;" onclick="handleCheckout('Guest')">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer-bar">
+    <p>Cineplex Prototype - Step 3: Booking & Seat Selection Page</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

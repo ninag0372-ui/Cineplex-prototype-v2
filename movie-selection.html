@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Selection</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Sketch 1 Header: Cineplex | log in + Sign up -->
+    <header>
+        <div class="logo-container">
+            <a href="index.html" class="logo">Cineplex</a>
+        </div>
+        <div class="auth-buttons">
+            <button class="btn btn-outline" onclick="showLoginModal()">log in</button>
+            <button class="btn btn-primary" onclick="showSignupModal()">Sign up</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1 class="page-title">Movie selection</h1>
+            <p class="page-subtitle">Select a movie to choose date, showtime, and seats.</p>
+        </div>
+
+        <!-- Movie Posters Grid -->
+        <div id="movie-grid-container" class="movie-grid">
+            <!-- Static movie options added as requested -->
+            <div class="movie-card">
+                <div class="poster-placeholder">
+                    [ Dune: Part Two Poster Placeholder ]
+                </div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Dune: Part Two</h3>
+                    <p class="movie-meta">PG-13 | 166 min</p>
+                    <p style="font-size: 0.85rem; color: #4a5568; margin-bottom: 0.5rem;">Paul Atreides unites with
+                        Chani and the Fremen while seeking revenge against the conspirators who destroyed his family.
+                    </p>
+                    <div class="tag-list">
+                        <span class="tag">IMAX</span><span class="tag">AVX</span><span class="tag">70MM</span>
+                    </div>
+                </div>
+                <a href="booking.html?movieId=m1" class="btn btn-primary" style="width:100%; text-align:center;">Select
+                    Showtimes</a>
+            </div>
+
+            <div class="movie-card">
+                <div class="poster-placeholder">
+                    [ Oppenheimer Poster Placeholder ]
+                </div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Oppenheimer</h3>
+                    <p class="movie-meta">R | 180 min</p>
+                    <p style="font-size: 0.85rem; color: #4a5568; margin-bottom: 0.5rem;">The story of American
+                        scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.</p>
+                    <div class="tag-list">
+                        <span class="tag">70MM</span><span class="tag">IMAX</span>
+                    </div>
+                </div>
+                <a href="booking.html?movieId=m2" class="btn btn-primary" style="width:100%; text-align:center;">Select
+                    Showtimes</a>
+            </div>
+
+            <div class="movie-card">
+                <div class="poster-placeholder">
+                    [ Inside Out 2 Poster Placeholder ]
+                </div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Inside Out 2</h3>
+                    <p class="movie-meta">PG | 96 min</p>
+                    <p style="font-size: 0.85rem; color: #4a5568; margin-bottom: 0.5rem;">Follow Riley in her teenage
+                        years as new emotions enter headquarters.</p>
+                    <div class="tag-list">
+                        <span class="tag">3D</span><span class="tag">Standard</span>
+                    </div>
+                </div>
+                <a href="booking.html?movieId=m3" class="btn btn-primary" style="width:100%; text-align:center;">Select
+                    Showtimes</a>
+            </div>
+
+            <div class="movie-card">
+                <div class="poster-placeholder">
+                    [ Wicked Poster Placeholder ]
+                </div>
+                <div class="movie-info">
+                    <h3 class="movie-title">Wicked</h3>
+                    <p class="movie-meta">PG | 160 min</p>
+                    <p style="font-size: 0.85rem; color: #4a5568; margin-bottom: 0.5rem;">Elphaba, a misunderstood young
+                        woman born with green skin, and Glinda, a popular blonde, forge an unlikely friendship.</p>
+                    <div class="tag-list">
+                        <span class="tag">AVX</span><span class="tag">VIP</span><span class="tag">3D</span>
+                    </div>
+                </div>
+                <a href="booking.html?movieId=m4" class="btn btn-primary" style="width:100%; text-align:center;">Select
+                    Showtimes</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-bar">
+        <p>Cineplex Prototype</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
